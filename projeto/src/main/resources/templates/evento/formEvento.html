@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+	<head>
+		<title>EventosApp</title>
+		
+		<link type="text/css" rel="stylesheet" href="/css/style.css" />
+		
+		<!--Import Google Icon Font-->
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	    <!--Import materialize.css-->
+	    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+
+	    <!--Let browser know website is optimized for mobile-->
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	
+	<body>
+
+		<h1 class="titulo">Cadastro de Eventos</h1>
+		
+		<div class="menu">
+		  <a href="/" class="waves-effect waves-light btn">
+			<i class="material-icons left">home</i>Home
+		  </a>
+		
+		  <a href="/eventos" class="waves-effect waves-light btn">
+			<i class="material-icons left">list</i>Lista Eventos
+		  </a>
+		</div><p />
+		
+		<form class="container" th:object="${evento}" method="post">
+		  <div class="row">
+		  	<div class="input-fieldcol col s12">
+		  	  <label>Nome: </label><input type="text" th:field="*{nome}" /><br />
+		  	</div>
+		  	<div class="input-fieldcol col s6">
+			<label>Local: </label><input type="text" th:field="*{local}" /><br />
+			</div>
+			<div class="input-fieldcol col s3">
+			<label>Data: </label><input type="date" th:field="*{data}" /><br />
+			</div>
+			<div class="input-fieldcol col s3">
+			<label>Horário: </label><input type="time" th:field="*{horario}" /><br />
+			</div>
+			<button class="waves-effect waves-light btn" type="submit">
+				<i class="material-icons left" >save</i>Salvar
+			</button>
+		  </div>
+		</form>
+
+		<!--JavaScript at end of body for optimized loading-->
+	    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+	</body>
+
+</html>
